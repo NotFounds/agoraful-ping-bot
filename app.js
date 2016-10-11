@@ -17,6 +17,7 @@ app.use(function *(){
   // var thread = payload.thread;
   // var user = payload.user;
 
+  console.log('router:', post.text)
   if (isPOST && isJSON && event == 'post') {
     var doResponse = true;
     var title = '';
@@ -57,4 +58,4 @@ app.use(function *(){
   }
 });
 
-app.listen(process.env.PORT || 8080);
+app.listen(process.env.PORT || 80);
