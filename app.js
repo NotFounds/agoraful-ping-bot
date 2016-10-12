@@ -2,6 +2,7 @@ var koa = require('koa');
 var koaBody = require('koa-body');
 
 var app = koa();
+var dice = ['⚀', '⚁', '⚂', '⚃', '⚄', '⚅'];
 
 app.use(koaBody());
 app.use(function *(){
@@ -33,7 +34,7 @@ app.use(function *(){
         text = 'おはよう！';
         break;
       case 'サイコロ':
-        text =  String(Math.floor( Math.random() * 5 ) + 1);
+        text =  String(dice[Math.floor(Math.random() * 5 )]);
         break;
       default:
         var index = post.text.indexOf('した.');
